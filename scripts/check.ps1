@@ -15,6 +15,8 @@ Confirm-LastExit 'Python formatting'
 & $projectPython -m mypy backend
 Confirm-LastExit 'Python type checking'
 $priorRuntimeDirectory = $env:DTL_RUNTIME_DIR
+# Pytest creates its base directory, but requires the parent to exist.
+[System.IO.Directory]::CreateDirectory((Join-Path $ProjectRoot '.local')) | Out-Null
 try {
     $env:DTL_RUNTIME_DIR = Join-Path $ProjectRoot '.local/gate-module-runtime'
     & $projectPython -m pytest --basetemp=.local/pytest-gate

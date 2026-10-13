@@ -56,4 +56,6 @@ jobs:
       - name: Install locked frontend dependencies
         run: pnpm install --dir frontend --frozen-lockfile
       - name: Run application and browser checks
-        run: .\scripts\check.ps1 -Browser
+        run: |
+          if (Test-Path -LiteralPath '.local') { throw 'Expected a clean checkout without local validation state.' }
+          .\scripts\check.ps1 -Browser

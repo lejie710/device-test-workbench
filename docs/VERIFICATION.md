@@ -2,6 +2,16 @@
 
 This record separates previously observed application checks from verification of this distribution. Passing simulated-device tests and intentional device FAIL observations are different: the application's tests must pass while a selected fault scenario can correctly produce failing assertions.
 
+## Clean-checkout validation follow-up
+
+The [first hosted run](https://github.com/lejie710/device-test-workbench/actions/runs/38402819639) on 13 October 2026 installed dependencies successfully, then reported 78 passing tests and 60 setup errors. The ignored project-root `.local` directory was absent. Pytest creates `pytest-gate` for `--basetemp=.local/pytest-gate`, but requires its parent to exist. Earlier local tooling preparation had created that parent and masked the missing prerequisite.
+
+The shared check script now creates only the `.local` parent before pytest, and the direct commands in CONTRIBUTING include the same preparation. The workflow asserts that `.local` is absent before invoking the script, so future hosted runs continue to exercise a clean start.
+
+Verification used a disposable checkout with its own locked dependencies, ordinary tools on PATH and no root `.local` or local tool configuration. The original script reproduced the same 78 passes and 60 setup errors. From that unchanged absent-parent state, the corrected full gate passed all 138 Python tests, lint, formatting, type checks, the production build and all 37 browser groups. The documented pytest block then passed all 138 tests from a second absent-parent start. Wrapper logs were kept outside the checkout so they could not create the missing directory. The upstream Starlette warning remains unchanged.
+
+These are local regression results. A successful hosted run of the corrected workflow is still pending publication of the fix.
+
 ## Version 0.3.1 distribution checks
 
 The 0.3.1 distribution was installed and verified in a fresh Windows checkout on 13 October 2026, using its own Python environment and frontend dependencies prepared from the included lockfiles. The checks below exercised that checkout's application code and rebuilt frontend.
@@ -29,7 +39,7 @@ The [dependency audit](results/dependency-audit.json) records the dated JavaScri
 
 `PUBLIC_EXPORT_MANIFEST.json` is the initial 0.3.1 file inventory of 114 application, documentation, configuration and evidence files; future development takes place directly in this repository.
 
-GitHub Actions has not run for this release. Local checks and workflow review do not establish a hosted-runner result. Earlier release sections below remain historical records.
+At the initial local handoff, GitHub Actions had not yet run. The clean-checkout follow-up above records its first result and the subsequent local correction. Earlier release sections below remain historical records.
 
 ## Version 0.3.0 application checks
 
@@ -109,4 +119,4 @@ The [dependency audit](results/dependency-audit.json) is a dated observation, no
 
 The [GitHub Actions workflow](../.github/workflows/ci.yml) has been prepared for a Windows runner with Python 3.12, Node.js 24 and pnpm 11.25.0. It installs locked dependencies, checks their consistency and runs the application gate including the browser workflows. It grants read-only repository access, uses pinned action commits and bounds the job to 20 minutes.
 
-The workflow has not been executed on GitHub. Local verification and a review of the workflow configuration do not establish a hosted-runner result.
+The first hosted execution failed during temporary-directory preparation, as recorded above. The corrected workflow still requires a new hosted execution; local verification does not establish that result.

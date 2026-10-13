@@ -20,6 +20,7 @@ When PowerShell script execution is blocked, run these commands directly from th
 .\.venv\Scripts\python.exe -m ruff check backend tests scripts
 .\.venv\Scripts\python.exe -m ruff format --check backend tests scripts
 .\.venv\Scripts\python.exe -m mypy backend
+[System.IO.Directory]::CreateDirectory((Join-Path (Get-Location) '.local')) | Out-Null
 $previousRuntime = $env:DTL_RUNTIME_DIR
 try {
     $env:DTL_RUNTIME_DIR = Join-Path (Get-Location) '.local/gate-module-runtime'
