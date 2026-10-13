@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-13T08:12:37.300Z",
+  "status": "passed",
+  "checks": [
+    "Invalid declarative plan displays server validation errors and cannot execute",
+    "JSON file import and validation produce an inspectable named snapshot",
+    "Custom campaign executes all four scenario-and-seed cases and saves every attempt",
+    "Campaign export includes the selected immutable campaign record",
+    "A campaign attempt opens the real trace, with catalog replay disabled for custom plans",
+    "Comparison shows changed conditions, one changed verdict, decisive values and a zero modeled-work delta",
+    "Campaign and comparison layouts avoid page-level overflow at 375px; campaign also checks 320px",
+    "Pause waits for the current run; explicit Resume completes the remaining 25-case sweep without repeating completed attempts"
+  ],
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1360,
+    1000
+  ],
+  "mobile_widths": [
+    375,
+    320
+  ],
+  "context": "Actual API and production frontend; temporary local runtime; isolated headless browser"
+}

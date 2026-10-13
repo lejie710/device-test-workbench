@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-13T08:12:04.377Z",
+  "status": "passed",
+  "checks": [
+    "Fresh runtime explains the simulated device and seed, with Healthy / Catalog / 3 defaults",
+    "Healthy device completes all 14 checks without failures",
+    "Faulty device produces seven observed failures and an explicit untrained-ML fallback",
+    "Downloaded JSON exactly preserves the recorded evidence",
+    "History persists both runs and filters clean results",
+    "UI reproduces the published 2,940-row benchmark metrics without replacing its dated report",
+    "Trained model runs the full timeout suite and earlier evidence remains unchanged",
+    "Phone-width test bench has no page-level horizontal overflow",
+    "Unavailable API produces a clear error and reconnect recovers",
+    "Server restart preserves completed run evidence"
+  ],
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1360,
+    1000
+  ],
+  "mobile_width": 375,
+  "context": "Local simulator; temporary runtime and isolated headless Chrome profile"
+}

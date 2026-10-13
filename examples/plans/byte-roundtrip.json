@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "name": "Byte round trip and reset",
+  "tests": [
+    {
+      "id": "byte_roundtrip",
+      "name": "Store a byte and clear it on reset",
+      "steps": [
+        {"command": {"op": "WRITE", "address": 3, "value": 165}, "expected": {"ok": true}},
+        {"command": {"op": "READ", "address": 3}, "expected": {"ok": true, "value": 165}},
+        {"command": {"op": "RESET"}, "expected": {"ok": true}},
+        {"command": {"op": "READ", "address": 3}, "expected": {"ok": true, "value": 0}}
+      ]
+    }
+  ]
+}

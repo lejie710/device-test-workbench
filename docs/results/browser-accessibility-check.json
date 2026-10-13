@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-13T08:13:06.563Z",
+  "status": "passed",
+  "checks": [
+    "Keyboard skip link moves focus into the main workspace",
+    "Invalid, duplicate and missing campaign inputs show associated explanations and focus the field on submit",
+    "Delayed campaign responses cannot replace the most recently selected saved record",
+    "Opening saved evidence moves keyboard focus to the loaded execution heading",
+    "Valid maximum-length names and identifiers wrap in plan preview, evidence and comparison at 375px and 320px",
+    "Reduced-motion preference suppresses continuous spinner motion and dark appearance preserves the review state",
+    "A pending campaign blocks competing work across views; hidden campaign polling releases the worker and refreshes all 25 completed runs",
+    "Targeted light/dark text, labels, errors, buttons and hovered PASS status meet 4.5:1 computed contrast; shared runner-error hover style is checked with a temporary DOM style fixture"
+  ],
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1360,
+    1000
+  ],
+  "mobile_widths": [
+    375,
+    320
+  ],
+  "context": "Actual API and production frontend; isolated local runtime; delayed saved-record response to verify latest selection wins"
+}

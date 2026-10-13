@@ -1,0 +1,782 @@
+{
+  "state": "completed",
+  "created_at": "2026-10-13T00:38:01.608634+00:00",
+  "protocol": {
+    "id": "history-ordering-three-seed-v1.1",
+    "dataset_seeds": [
+      73129,
+      91283,
+      105613
+    ],
+    "learner_seed": 73129,
+    "train_cycles": 120,
+    "validation_cycles": 30,
+    "test_cycles": 60,
+    "candidate_C": [
+      0.1,
+      1.0
+    ],
+    "ranking": "failure risk / previous modeled cost",
+    "selection": "Validation only; fitted weights frozen throughout final evaluation.",
+    "comparison_unit": "Complete final cycles, summarized separately for each seed.",
+    "ablation": "None",
+    "v1_preserved": true
+  },
+  "trials": [
+    {
+      "seed": 73129,
+      "methods": [
+        {
+          "id": "default",
+          "label": "Default order",
+          "mean_first_failure_cost_ms": 388.5777777777778,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        },
+        {
+          "id": "recent_first",
+          "label": "Recent failures first",
+          "mean_first_failure_cost_ms": 148.95555555555555,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        },
+        {
+          "id": "ml",
+          "label": "Logistic regression",
+          "mean_first_failure_cost_ms": 220.33333333333334,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        }
+      ],
+      "split": {
+        "train_cycles": 120,
+        "validation_cycles": 30,
+        "test_cycles": 60
+      },
+      "dataset": {
+        "cycles": 210,
+        "rows": 2940,
+        "seed": 73129,
+        "features": [
+          "test_id:initial_status",
+          "test_id:single_byte",
+          "test_id:overwrite",
+          "test_id:zero_pattern",
+          "test_id:ones_pattern",
+          "test_id:alternating_pattern",
+          "test_id:address_isolation",
+          "test_id:boundary_addresses",
+          "test_id:reset_clears",
+          "test_id:reset_state",
+          "test_id:invalid_read",
+          "test_id:invalid_write",
+          "test_id:unsupported_command",
+          "test_id:repeat_reset",
+          "last_failure",
+          "failure_rate_last_5",
+          "failure_rate_last_20",
+          "observed_verdicts",
+          "runs_since_failure",
+          "previous_mean_modeled_cost_ms"
+        ]
+      },
+      "validation": {
+        "candidate_C": [
+          0.1,
+          1.0
+        ],
+        "mean_first_failure_cost_ms": [
+          110.36363636363636,
+          105.9090909090909
+        ],
+        "selected_C": 1.0,
+        "tie_break": "First candidate; no final-test tuning."
+      },
+      "regimes": [
+        {
+          "regime": "unseen_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 55.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 64.8,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 59.4,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "repaired",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "recurring_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 783.0,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 90.9,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 14.3,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "independent_mixed_scenarios",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 364.24,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 205.84,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 367.12,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            }
+          ]
+        }
+      ],
+      "winner_ids": [
+        "recent_first"
+      ],
+      "ml_minus_recent_first_ms": 71.3777777777778,
+      "evidence_directory": "seed-73129"
+    },
+    {
+      "seed": 91283,
+      "methods": [
+        {
+          "id": "default",
+          "label": "Default order",
+          "mean_first_failure_cost_ms": 392.45652173913044,
+          "mean_total_cost_ms": 1725.0,
+          "faulty_cycles": 46,
+          "clean_cycles": 14,
+          "failures_found": 205,
+          "total_tests": 840
+        },
+        {
+          "id": "recent_first",
+          "label": "Recent failures first",
+          "mean_first_failure_cost_ms": 205.6086956521739,
+          "mean_total_cost_ms": 1725.0,
+          "faulty_cycles": 46,
+          "clean_cycles": 14,
+          "failures_found": 205,
+          "total_tests": 840
+        },
+        {
+          "id": "ml",
+          "label": "Logistic regression",
+          "mean_first_failure_cost_ms": 214.45652173913044,
+          "mean_total_cost_ms": 1725.0,
+          "faulty_cycles": 46,
+          "clean_cycles": 14,
+          "failures_found": 205,
+          "total_tests": 840
+        }
+      ],
+      "split": {
+        "train_cycles": 120,
+        "validation_cycles": 30,
+        "test_cycles": 60
+      },
+      "dataset": {
+        "cycles": 210,
+        "rows": 2940,
+        "seed": 91283,
+        "features": [
+          "test_id:initial_status",
+          "test_id:single_byte",
+          "test_id:overwrite",
+          "test_id:zero_pattern",
+          "test_id:ones_pattern",
+          "test_id:alternating_pattern",
+          "test_id:address_isolation",
+          "test_id:boundary_addresses",
+          "test_id:reset_clears",
+          "test_id:reset_state",
+          "test_id:invalid_read",
+          "test_id:invalid_write",
+          "test_id:unsupported_command",
+          "test_id:repeat_reset",
+          "last_failure",
+          "failure_rate_last_5",
+          "failure_rate_last_20",
+          "observed_verdicts",
+          "runs_since_failure",
+          "previous_mean_modeled_cost_ms"
+        ]
+      },
+      "validation": {
+        "candidate_C": [
+          0.1,
+          1.0
+        ],
+        "mean_first_failure_cost_ms": [
+          104.81818181818181,
+          99.68181818181819
+        ],
+        "selected_C": 1.0,
+        "tie_break": "First candidate; no final-test tuning."
+      },
+      "regimes": [
+        {
+          "regime": "unseen_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 55.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 135.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 135.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "repaired",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "recurring_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 783.0,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 90.9,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 14.3,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "independent_mixed_scenarios",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 30,
+              "faulty_cycles": 26,
+              "clean_cycles": 4,
+              "mean_first_failure_cost_ms": 372.03846153846155,
+              "mean_total_cost_ms": 1347.0,
+              "failures_found": 105,
+              "total_tests": 420
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 30,
+              "faulty_cycles": 26,
+              "clean_cycles": 4,
+              "mean_first_failure_cost_ms": 276.88461538461536,
+              "mean_total_cost_ms": 1347.0,
+              "failures_found": 105,
+              "total_tests": 420
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 30,
+              "faulty_cycles": 26,
+              "clean_cycles": 4,
+              "mean_first_failure_cost_ms": 322.0,
+              "mean_total_cost_ms": 1347.0,
+              "failures_found": 105,
+              "total_tests": 420
+            }
+          ]
+        }
+      ],
+      "winner_ids": [
+        "recent_first"
+      ],
+      "ml_minus_recent_first_ms": 8.84782608695653,
+      "evidence_directory": "seed-91283"
+    },
+    {
+      "seed": 105613,
+      "methods": [
+        {
+          "id": "default",
+          "label": "Default order",
+          "mean_first_failure_cost_ms": 385.3777777777778,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        },
+        {
+          "id": "recent_first",
+          "label": "Recent failures first",
+          "mean_first_failure_cost_ms": 163.62222222222223,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        },
+        {
+          "id": "ml",
+          "label": "Logistic regression",
+          "mean_first_failure_cost_ms": 184.9777777777778,
+          "mean_total_cost_ms": 1788.0,
+          "faulty_cycles": 45,
+          "clean_cycles": 15,
+          "failures_found": 210,
+          "total_tests": 840
+        }
+      ],
+      "split": {
+        "train_cycles": 120,
+        "validation_cycles": 30,
+        "test_cycles": 60
+      },
+      "dataset": {
+        "cycles": 210,
+        "rows": 2940,
+        "seed": 105613,
+        "features": [
+          "test_id:initial_status",
+          "test_id:single_byte",
+          "test_id:overwrite",
+          "test_id:zero_pattern",
+          "test_id:ones_pattern",
+          "test_id:alternating_pattern",
+          "test_id:address_isolation",
+          "test_id:boundary_addresses",
+          "test_id:reset_clears",
+          "test_id:reset_state",
+          "test_id:invalid_read",
+          "test_id:invalid_write",
+          "test_id:unsupported_command",
+          "test_id:repeat_reset",
+          "last_failure",
+          "failure_rate_last_5",
+          "failure_rate_last_20",
+          "observed_verdicts",
+          "runs_since_failure",
+          "previous_mean_modeled_cost_ms"
+        ]
+      },
+      "validation": {
+        "candidate_C": [
+          0.1,
+          1.0
+        ],
+        "mean_first_failure_cost_ms": [
+          104.31818181818181,
+          100.81818181818181
+        ],
+        "selected_C": 1.0,
+        "tie_break": "First candidate; no final-test tuning."
+      },
+      "regimes": [
+        {
+          "regime": "unseen_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 55.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 54.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 54.0,
+              "mean_total_cost_ms": 4623.0,
+              "failures_found": 80,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "repaired",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 0,
+              "clean_cycles": 10,
+              "mean_first_failure_cost_ms": null,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 0,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "recurring_defect",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 783.0,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 90.9,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 10,
+              "faulty_cycles": 10,
+              "clean_cycles": 0,
+              "mean_first_failure_cost_ms": 14.3,
+              "mean_total_cost_ms": 843.0,
+              "failures_found": 20,
+              "total_tests": 140
+            }
+          ]
+        },
+        {
+          "regime": "independent_mixed_scenarios",
+          "methods": [
+            {
+              "id": "default",
+              "label": "Default order",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 358.48,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            },
+            {
+              "id": "recent_first",
+              "label": "Recent failures first",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 236.56,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            },
+            {
+              "id": "ml",
+              "label": "Logistic regression",
+              "cycles": 30,
+              "faulty_cycles": 25,
+              "clean_cycles": 5,
+              "mean_first_failure_cost_ms": 305.64,
+              "mean_total_cost_ms": 1473.0,
+              "failures_found": 110,
+              "total_tests": 420
+            }
+          ]
+        }
+      ],
+      "winner_ids": [
+        "recent_first"
+      ],
+      "ml_minus_recent_first_ms": 21.355555555555554,
+      "evidence_directory": "seed-105613"
+    }
+  ],
+  "aggregate": [
+    {
+      "id": "default",
+      "label": "Default order",
+      "seed_count": 3,
+      "mean_of_seed_means_ms": 388.80402576489536,
+      "minimum_seed_mean_ms": 385.3777777777778,
+      "maximum_seed_mean_ms": 392.45652173913044,
+      "winning_seeds": 0
+    },
+    {
+      "id": "recent_first",
+      "label": "Recent failures first",
+      "seed_count": 3,
+      "mean_of_seed_means_ms": 172.72882447665054,
+      "minimum_seed_mean_ms": 148.95555555555555,
+      "maximum_seed_mean_ms": 205.6086956521739,
+      "winning_seeds": 3
+    },
+    {
+      "id": "ml",
+      "label": "Logistic regression",
+      "seed_count": 3,
+      "mean_of_seed_means_ms": 206.58921095008054,
+      "minimum_seed_mean_ms": 184.9777777777778,
+      "maximum_seed_mean_ms": 220.33333333333334,
+      "winning_seeds": 0
+    }
+  ],
+  "findings": [
+    "Executed 3 fixed seeds with 60 held-out cycles each; all methods retained the complete suite and equivalent per-cycle observations.",
+    "Positive ML-minus-rule values mean later feedback from ML. All seeds are retained.",
+    "Repair regimes with no failure have null first-failure means, not zero."
+  ],
+  "limitations": [
+    "Three synthetic cohorts are a sensitivity study, not a confidence interval.",
+    "Correlated test rows are not independent physical devices or production samples.",
+    "The model-selection budget is unchanged; final results were not used for tuning.",
+    "Wall-clock measurements are excluded from modeled-cost comparisons.",
+    "The original V1 report and interactive model were not overwritten."
+  ]
+}

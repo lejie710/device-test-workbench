@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-13T08:14:00.013Z",
+  "status": "passed",
+  "checks": [
+    "Keyboard opens the comparison panel; empty history explains how to create a comparable pair",
+    "One-campaign and same-campaign selections cannot imply independent evidence",
+    "Complete matching pairs use API counts, preserve recurring failures and show actual decisive response evidence",
+    "Downloaded JSON exactly equals the displayed snapshot and the API export for completed campaigns",
+    "Changed definitions expose saved condition differences and exclude their changed verdicts from failure-change totals",
+    "Loading feedback remains interactive; changing a selector prevents a stale asynchronous response from appearing",
+    "A refreshed saved-campaign list that drops a selection clears its report before choosing a replacement",
+    "An unavailable response has actionable feedback and retry works; added and removed cases stay outside the paired denominator",
+    "Full trace opens the selected real attempt; light/dark layouts fit 375px and 320px, with keyboard focus and reduced motion",
+    "A real paused campaign counts completed comparable cases while pending cases remain explicitly not compared",
+    "Actual interruption and explicit resumption preserve the old run; comparison uses attempt 2 and displays the retained earlier attempt"
+  ],
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1360,
+    1000
+  ],
+  "mobile_widths": [
+    375,
+    320
+  ],
+  "context": "Actual API and production frontend; executed simulator outcomes; temporary runtime; isolated headless browser",
+  "controlled_transport_cases": [
+    "Delayed real response for stale-selection check",
+    "Narrowed real campaign list to simulate a selection leaving the saved-history window",
+    "HTTP 503 response for recovery feedback"
+  ],
+  "matched_snapshot": {
+    "total_cases": 6,
+    "matched_cases": 2,
+    "comparable_cases": 2,
+    "not_compared_cases": 4,
+    "added_cases": 2,
+    "removed_cases": 2,
+    "new_failure_cases": 0,
+    "resolved_failure_cases": 0,
+    "changed_cases": 0,
+    "unchanged_cases": 2,
+    "compared_tests": 2,
+    "new_failures": 0,
+    "resolved_failures": 0,
+    "persistent_failures": 1,
+    "unchanged_passes": 1
+  }
+}

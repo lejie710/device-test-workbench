@@ -1,0 +1,645 @@
+{
+  "state": "completed",
+  "schema_version": 1,
+  "created_at": "2026-10-13T00:36:57.927092+00:00",
+  "model_name": "Logistic regression",
+  "simulation_notice": "All device results are executed against a software simulator. Discovery costs are modeled milliseconds, not measured physical-device or production test times. The experiment does not establish a benefit on real laboratory data.",
+  "split": {
+    "train_cycles": 120,
+    "validation_cycles": 30,
+    "test_cycles": 60
+  },
+  "dataset": {
+    "cycles": 210,
+    "rows": 2940,
+    "seed": 73129,
+    "features": [
+      "test_id:initial_status",
+      "test_id:single_byte",
+      "test_id:overwrite",
+      "test_id:zero_pattern",
+      "test_id:ones_pattern",
+      "test_id:alternating_pattern",
+      "test_id:address_isolation",
+      "test_id:boundary_addresses",
+      "test_id:reset_clears",
+      "test_id:reset_state",
+      "test_id:invalid_read",
+      "test_id:invalid_write",
+      "test_id:unsupported_command",
+      "test_id:repeat_reset",
+      "last_failure",
+      "failure_rate_last_5",
+      "failure_rate_last_20",
+      "observed_verdicts",
+      "runs_since_failure",
+      "previous_mean_modeled_cost_ms"
+    ]
+  },
+  "methods": [
+    {
+      "id": "default",
+      "label": "Default order",
+      "mean_first_failure_cost_ms": 388.5777777777778,
+      "mean_total_cost_ms": 1788,
+      "faulty_cycles": 45,
+      "clean_cycles": 15,
+      "failures_found": 210,
+      "total_tests": 840
+    },
+    {
+      "id": "recent_first",
+      "label": "Recent failures first",
+      "mean_first_failure_cost_ms": 148.95555555555555,
+      "mean_total_cost_ms": 1788,
+      "faulty_cycles": 45,
+      "clean_cycles": 15,
+      "failures_found": 210,
+      "total_tests": 840
+    },
+    {
+      "id": "ml",
+      "label": "Logistic regression",
+      "mean_first_failure_cost_ms": 220.33333333333334,
+      "mean_total_cost_ms": 1788,
+      "faulty_cycles": 45,
+      "clean_cycles": 15,
+      "failures_found": 210,
+      "total_tests": 840
+    }
+  ],
+  "cases": [
+    {
+      "cycle": 151,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 108,
+      "ml_first_failure_cost_ms": 108
+    },
+    {
+      "cycle": 152,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 108,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 153,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 154,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 155,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 156,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 157,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 158,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 159,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 160,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "unseen_defect",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 54
+    },
+    {
+      "cycle": 161,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 162,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 163,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 164,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 165,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 166,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 167,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 783,
+      "ml_first_failure_cost_ms": 17
+    },
+    {
+      "cycle": 168,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 169,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 170,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 171,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 172,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 173,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 174,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 175,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 176,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "recurring_defect",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 14
+    },
+    {
+      "cycle": 177,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 178,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 179,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 180,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "repaired",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 181,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 86,
+      "ml_first_failure_cost_ms": 57
+    },
+    {
+      "cycle": 182,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 782,
+      "ml_first_failure_cost_ms": 826
+    },
+    {
+      "cycle": 183,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 129
+    },
+    {
+      "cycle": 184,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 185,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 54,
+      "ml_first_failure_cost_ms": 530
+    },
+    {
+      "cycle": 186,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 187,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 241
+    },
+    {
+      "cycle": 188,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 189,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 175,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 190,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 786
+    },
+    {
+      "cycle": 191,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 895,
+      "ml_first_failure_cost_ms": 939
+    },
+    {
+      "cycle": 192,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 826
+    },
+    {
+      "cycle": 193,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 85,
+      "ml_first_failure_cost_ms": 939
+    },
+    {
+      "cycle": 194,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 826
+    },
+    {
+      "cycle": 195,
+      "phase": "test",
+      "scenario": "ignored_write",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 311,
+      "recent_first_first_failure_cost_ms": 359,
+      "ml_first_failure_cost_ms": 219
+    },
+    {
+      "cycle": 196,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 197,
+      "phase": "test",
+      "scenario": "ignored_write",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 311,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 198,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 71,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 199,
+      "phase": "test",
+      "scenario": "ignored_write",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 311,
+      "recent_first_first_failure_cost_ms": 49,
+      "ml_first_failure_cost_ms": 18
+    },
+    {
+      "cycle": 200,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 760,
+      "ml_first_failure_cost_ms": 508
+    },
+    {
+      "cycle": 201,
+      "phase": "test",
+      "scenario": "timeout",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 55,
+      "recent_first_first_failure_cost_ms": 139,
+      "ml_first_failure_cost_ms": 939
+    },
+    {
+      "cycle": 202,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 10,
+      "recent_first_first_failure_cost_ms": 58,
+      "ml_first_failure_cost_ms": 9
+    },
+    {
+      "cycle": 203,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 204,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 36,
+      "ml_first_failure_cost_ms": 58
+    },
+    {
+      "cycle": 205,
+      "phase": "test",
+      "scenario": "ignored_write",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 311,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 241
+    },
+    {
+      "cycle": 206,
+      "phase": "test",
+      "scenario": "corrupt_read",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 167,
+      "recent_first_first_failure_cost_ms": 215,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 207,
+      "phase": "test",
+      "scenario": "ignored_write",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 311,
+      "recent_first_first_failure_cost_ms": 197,
+      "ml_first_failure_cost_ms": 147
+    },
+    {
+      "cycle": 208,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    },
+    {
+      "cycle": 209,
+      "phase": "test",
+      "scenario": "stuck_state",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": 783,
+      "recent_first_first_failure_cost_ms": 14,
+      "ml_first_failure_cost_ms": 58
+    },
+    {
+      "cycle": 210,
+      "phase": "test",
+      "scenario": "healthy",
+      "regime": "independent_mixed_scenarios",
+      "default_first_failure_cost_ms": null,
+      "recent_first_first_failure_cost_ms": null,
+      "ml_first_failure_cost_ms": null
+    }
+  ],
+  "findings": [
+    "All three methods executed all 14 tests in every final evaluation cycle; verdicts, observations and modeled total costs matched for each cycle.",
+    "Discovery averages exclude cycles with no observed failure; those cycles are counted separately.",
+    "The final cohort introduces timeout behavior unseen during fitting and validation, then ends with independent mixed scenarios where history is less informative.",
+    "Lowest mean modeled cost to first failure: Recent failures first (148.956 modeled ms). This is an observed simulation result, not a promised ML gain."
+  ],
+  "limitations": [
+    "The scenario schedule and device are synthetic; real-lab transfer is unmeasured.",
+    "A defect-free history cannot predict a genuinely new defect with certainty.",
+    "Test order changes feedback timing, not the work of executing the full suite.",
+    "The simple rule may beat ML; two fixed C values are the entire tuning budget.",
+    "Only the selected fault scenarios are exercised; this is not a coverage percentage.",
+    "Failure probability scores are not independently calibrated confidence estimates."
+  ],
+  "training_seconds": 3.5876611999992747,
+  "validation": {
+    "candidate_C": [
+      0.1,
+      1
+    ],
+    "mean_first_failure_cost_ms": [
+      110.36363636363636,
+      105.9090909090909
+    ],
+    "selected_C": 1,
+    "tie_break": "First candidate; no final-test tuning."
+  },
+  "model_artifact": "model/logistic-v1.json",
+  "sklearn_version": "1.9.1",
+  "cost_definition": "Sum of modeled test costs through the first failing test, inclusive.",
+  "wall_time_note": "Training seconds include model imports and both candidate fits. Experiment seconds cover data execution, fitting and final replays before artifact output. Both are measured on this host; modeled costs do not sleep.",
+  "experiment_seconds": 4.50388419997762
+}

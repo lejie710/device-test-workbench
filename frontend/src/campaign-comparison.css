@@ -1,0 +1,93 @@
+.campaign-comparison { margin: 27px 0 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.campaign-comparison > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 21px; list-style: none; font-size: 12px; font-weight: 550; }
+.campaign-comparison > summary::-webkit-details-marker { display: none; }
+.campaign-comparison > summary > span { display: flex; align-items: center; gap: 8px; }
+.campaign-comparison > summary > span:last-child { color: var(--muted); font-size: 10px; font-weight: 400; }
+.campaign-comparison > summary svg { width: 16px; height: 16px; }
+.campaign-comparison[open] > summary { border-bottom: 1px solid var(--line); }
+.campaign-comparison[open] > summary > span:last-child > svg { transform: rotate(90deg); }
+.campaign-comparison .compare-intro { max-width: 790px; }
+.campaign-compare-feedback { color: var(--muted); font-size: 11px; line-height: 1.8; }
+.campaign-compare-feedback p { margin-top: 12px; }
+.campaign-comparison-result { min-width: 0; }
+.campaign-compare-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px 0; margin-top: 20px; }
+.campaign-compare-summary > div { display: flex; flex-direction: column; gap: 7px; padding: 0 22px; border-left: 1px solid var(--line); }
+.campaign-compare-summary > div:first-child { border-left: 0; padding-left: 0; }
+.campaign-compare-summary > div:last-child { padding-right: 0; }
+.campaign-compare-summary strong { font-size: 28px; line-height: 1.1; letter-spacing: -.7px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.campaign-compare-summary strong > span { color: var(--muted); font-size: 17px; font-weight: 400; }
+.campaign-compare-summary > div > span { font-size: 11px; line-height: 1.6; color: var(--muted); }
+.campaign-compare-scope { color: var(--muted); font-size: 11px; line-height: 1.8; margin-top: 12px; }
+.campaign-compare-count-help { color: var(--muted); font-size: 11px; line-height: 1.8; margin-top: 16px; max-width: 80ch; }
+.campaign-compare-deltas { padding: 18px 0 8px; }
+.campaign-compare-deltas > p { color: var(--muted); font-size: 11px; line-height: 1.8; }
+.campaign-compare-deltas > div { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 10px; }
+.campaign-compare-deltas > div > span { font-size: 11px; color: var(--muted); }
+.campaign-compare-deltas strong { font-size: 16px; font-weight: 550; color: var(--ink); margin-right: 4px; font-variant-numeric: tabular-nums; }
+.campaign-compare-unavailable { background: var(--inset); padding: 13px; margin: 15px 0 3px; border-radius: 7px; font-size: 11px; color: var(--muted); line-height: 1.8; }
+.campaign-compare-cases-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 25px 0 12px; }
+.campaign-compare-cases-heading h3 { font-size: 14px; font-weight: 550; }
+.campaign-compare-cases-heading label { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+.campaign-compare-cases-heading select, .campaign-compare-test-picker select { color: var(--ink); background: var(--page); border: 1px solid var(--line); border-radius: 6px; min-height: 36px; min-width: 0; padding: 7px 9px; font-size: 11px; }
+.campaign-compare-cases { display: flex; flex-direction: column; gap: 4px; }
+.campaign-compare-cases > button { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 14px; gap: 20px; align-items: center; border: 1px solid transparent; border-radius: 8px; background: var(--page); padding: 13px; text-align: left; }
+.campaign-compare-cases > button:hover { background: var(--inset); border-color: var(--line); }
+.campaign-compare-cases > button.selected { background: var(--soft); border-color: var(--line-strong); }
+.campaign-compare-cases > button > span { min-width: 0; }
+.campaign-compare-cases strong { display: block; font-size: 12px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
+.campaign-compare-cases > button > span > span { display: block; color: var(--muted); font-size: 10px; line-height: 1.7; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.campaign-case-outcome.excluded strong { color: var(--amber); }
+.campaign-compare-cases > button > svg { width: 14px; height: 14px; color: var(--muted); }
+.campaign-case-evidence { margin-top: 22px; padding-top: 23px; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+.campaign-compare-evidence-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.campaign-compare-evidence-heading h3 { font-size: 17px; font-weight: 550; letter-spacing: -.2px; line-height: 1.5; }
+.campaign-compare-evidence-heading h3 > span { font-size: 12px; font-weight: 400; color: var(--muted); padding-left: 7px; white-space: nowrap; }
+.campaign-compare-evidence-heading p { font-size: 11px; line-height: 1.8; color: var(--muted); margin-top: 6px; max-width: 690px; }
+.campaign-case-badge { font-size: 10px; color: var(--amber); background: var(--amber-soft); padding: 5px 8px; border-radius: 5px; white-space: nowrap; }
+.campaign-case-badge.is-comparable { color: var(--green); background: var(--green-soft); }
+.campaign-compare-attempts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 17px; }
+.campaign-compare-attempt { min-width: 0; border-left: 2px solid var(--line-strong); padding-left: 13px; }
+.campaign-compare-attempt > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.campaign-compare-attempt h4 { font-size: 12px; font-weight: 550; }
+.campaign-compare-attempt .button-small { font-size: 10px; padding-right: 0; }
+.campaign-compare-attempt p, .campaign-compare-attempt ul { font-size: 11px; color: var(--muted); line-height: 1.8; margin-top: 5px; overflow-wrap: anywhere; }
+.campaign-compare-attempt ul { padding-left: 15px; }
+.campaign-compare-attempt p strong { font-weight: 500; color: var(--ink); }
+.campaign-compare-attempt > code { display: block; font-size: 10px; color: var(--muted); line-height: 1.8; margin-top: 7px; overflow-wrap: anywhere; }
+.campaign-compare-test-picker { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 11px; margin-top: 23px; }
+.campaign-compare-test-picker select { flex: 1; max-width: 670px; }
+.campaign-comparison .paired-evidence h4 { font-size: 14px; font-weight: 550; overflow-wrap: anywhere; }
+.campaign-comparison .paired-evidence-label > span { letter-spacing: 0; font-size: 11px; }
+.campaign-compare-export { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); margin-top: 24px; padding-top: 17px; }
+.campaign-compare-export > p { max-width: 590px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.campaign-compare-export .button { flex-shrink: 0; }
+@media (max-width: 780px) {
+  .campaign-compare-cases > button { gap: 12px; }
+  .campaign-compare-summary > div { padding: 0 15px; }
+  .campaign-compare-export { align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .campaign-comparison > summary { padding: 15px; font-size: 11px; gap: 10px; }
+  .campaign-comparison > summary > span:last-child { font-size: 0; gap: 0; }
+  .campaign-comparison > summary > span:last-child svg { width: 15px; height: 15px; }
+  .campaign-compare-summary { gap: 0; padding: 17px 0; }
+  .campaign-compare-summary > div { padding: 0 10px; }
+  .campaign-compare-summary strong { font-size: 24px; }
+  .campaign-compare-summary strong > span { font-size: 13px; }
+  .campaign-compare-summary > div > span { font-size: 10px; }
+  .campaign-compare-cases-heading { align-items: flex-start; flex-direction: column; }
+  .campaign-compare-cases-heading label { width: 100%; justify-content: space-between; }
+  .campaign-compare-cases-heading select { min-height: 42px; max-width: calc(100% - 45px); font-size: 12px; }
+  .campaign-compare-cases > button { grid-template-columns: minmax(0, 1fr) 14px; gap: 8px; padding: 12px; }
+  .campaign-compare-cases > button > span:first-child { grid-column: 1; grid-row: 1; }
+  .campaign-compare-cases > button > svg { grid-column: 2; grid-row: 1; }
+  .campaign-case-outcome { grid-column: 1 / -1; grid-row: 2; }
+  .campaign-case-outcome strong { font-size: 11px; }
+  .campaign-compare-evidence-heading { flex-direction: column; gap: 10px; }
+  .campaign-compare-attempts { grid-template-columns: 1fr; gap: 18px; }
+  .campaign-compare-attempt .button-small { min-height: 36px; }
+  .campaign-compare-test-picker { flex-direction: column; align-items: stretch; gap: 8px; }
+  .campaign-compare-test-picker select { width: 100%; font-size: 16px; min-height: 42px; }
+  .campaign-compare-export { flex-direction: column; gap: 9px; }
+  .campaign-compare-export .button { min-height: 40px; padding-left: 0; }
+}

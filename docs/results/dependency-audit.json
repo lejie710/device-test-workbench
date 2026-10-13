@@ -1,0 +1,22 @@
+{
+  "source": "pnpm audit against npm registry",
+  "checked_date": "2026-10-13",
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0
+  },
+  "scope": "production and development JavaScript dependencies",
+  "python": {
+    "source": "OSV API package/version querybatch",
+    "queried_at": "2026-10-13T08:14:14.830628+00:00",
+    "lock_sha256": "e9ff3abbd9ea0080dd425c3e953ec430c74d133d34df7bdfd8603d198b9f496e",
+    "queried_packages": 35,
+    "affected_packages": 0,
+    "findings": [],
+    "scope": "All pinned application and verification packages in requirements.lock"
+  },
+  "limitation": "Dated advisory lookup, not proof that packages or application code have no vulnerabilities."
+}
